@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title','About')
+@section('title','Clean Blog - About')
 @section('content')
   <!-- Page Header -->
   <header class="masthead" style="background-image: url('img/about-bg.jpg')">

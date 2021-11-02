@@ -26,10 +26,10 @@
 <body>
 
   <!-- Navigation -->
-  @include('layouts.partials.navigation')
+  @include('layouts.partials.navigations')
 
   <!-- Page Header -->
-  @yield('content')
+
 
   <!-- Main Content -->
   @yield('content')
