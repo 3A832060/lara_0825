@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('posts',[\App\Http\Controllers\PostController::class,'index'])->name('post.index');
+Route::get('post',[\App\Http\Controllers\PostController::class,'show'])->name('posts.show');
+Route::get('about',[\App\Http\Controllers\PostController::class,'about'])->name('posts.about');
+Route::get('contact',[\App\Http\Controllers\PostController::class,'contact'])->name('posts.contact');
