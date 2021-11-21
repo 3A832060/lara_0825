@@ -20,10 +20,12 @@ Route::get('/', function () {
 //    $post->title = 'test title';
 //    $post->content = 'test content';
 //    $post->save();
-    Post::create([
-        'title' => 'test title',
-        'content' => 'test content',
-    ]);
+//    Post::create([
+//        'title' => 'test title',
+//        'content' => 'test content',
+//    ]);
+    $posts = Post::all();
+    dd($posts);
 });
 
 Route::get('posts',[\App\Http\Controllers\PostController::class,'index'])->name('post.index');
