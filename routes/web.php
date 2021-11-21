@@ -35,10 +35,12 @@ Route::get('/', function () {
 //        'title' => 'updated title',
 //        'content' => 'updated content',
 //    ]);
+//    $post = Post::find(1);
+//    $post->title = 'saved title';
+//    $post->content = 'saved content';
+//    $post->save();
     $post = Post::find(1);
-    $post->title = 'saved title';
-    $post->content = 'saved content';
-    $post->save();
+    $post->delete();
 });
 
 Route::get('posts',[\App\Http\Controllers\PostController::class,'index'])->name('post.index');
