@@ -50,8 +50,12 @@ Route::get('/', function () {
 //    dd($featuredPost);  //---6-2---
 //    $fourthPost = Post::find(4);
 //    dd($fourthPost);  //---6-3---
-    $lastPost = Post::orderBy('id','DESC')->first();
-    dd($lastPost);
+//    $lastPost = Post::orderBy('id','DESC')->first();
+//    dd($lastPost);  //---6-4---
+    $post = Post::find(1);
+    foreach($post->comments as $comment){
+        echo $comment->content.'<br>';
+    }
 });
 
 Route::get('posts',[\App\Http\Controllers\PostController::class,'index'])->name('post.index');
