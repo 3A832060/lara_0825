@@ -53,14 +53,22 @@ Route::get('/', function () {
 //    dd($fourthPost);  //---6-3---
 //    $lastPost = Post::orderBy('id','DESC')->first();
 //    dd($lastPost);  //---6-4---
-    $post = Post::find(10);
-    echo $post->title.'*****<br>';
-    foreach ($post->comments as $comment){
-        echo $comment->content.'<br>';
-    }
+
+//    $post = Post::find(10);
+//    echo $post->title.'*****<br>';
+//    foreach ($post->comments as $comment){
+//        echo $comment->content.'<br>';   //7-4
+//    }
+
+    $comment=Comment::find(10);
+    echo  $comment -> content.'<br>';
+    $post = $comment ->post;
+    echo  $post -> id .'<br>';
+    echo  $post -> title .'<br>';
+    echo  $post -> content .'<br>';
 });
 
-Route::get('posts',[\App\Http\Controllers\PostController::class,'index'])->name('post.index');
+Route::get('posts',[\App\Http\Controllers\PostController::class,'index'])->name('posts.index');
 Route::get('post',[\App\Http\Controllers\PostController::class,'show'])->name('posts.show');
 Route::get('about',[\App\Http\Controllers\PostController::class,'about'])->name('posts.about');
 Route::get('contact',[\App\Http\Controllers\PostController::class,'contact'])->name('posts.contact');
