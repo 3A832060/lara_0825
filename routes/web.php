@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
+use App\Models\Comment;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,8 +53,9 @@ Route::get('/', function () {
 //    dd($fourthPost);  //---6-3---
 //    $lastPost = Post::orderBy('id','DESC')->first();
 //    dd($lastPost);  //---6-4---
-    $post = Post::find(1);
-    foreach($post->comments as $comment){
+    $post = Post::find(10);
+    echo $post->title.'*****<br>';
+    foreach ($post->comments as $comment){
         echo $comment->content.'<br>';
     }
 });
